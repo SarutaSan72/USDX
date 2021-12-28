@@ -390,7 +390,9 @@ begin
 
     ScoreDB.ExecSQL(
       'INSERT INTO ' + cUS_Songs +
-      ' SELECT  ID, Artist, Title, TimesPlayed, ''NULL'' FROM us_songs_101;');
+    //' SELECT  ID, Artist, Title, TimesPlayed, ''NULL'' FROM us_songs_101;');
+    // fix incompatible database scheme: now 12 columns instead 5 columns
+      ' SELECT  ID, Artist, Title, TimesPlayed, ''NULL'', ''NULL'', ''NULL'', ''NULL'', ''NULL'', ''NULL'', ''NULL'', ''NULL'', ''NULL'', ''NULL'', ''NULL'', ''NULL'' FROM us_songs_101;');
 
     // now we have to convert all the texts for unicode support:
 
